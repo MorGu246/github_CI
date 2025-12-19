@@ -4,6 +4,8 @@ FROM node:18
 WORKDIR /app
 #מעתיק את כלל מה שאיפה הדוקר פייל לתוך התיקייה שיצרנו
 COPY . /app
+
+EXPOSE 8080
 #
 RUN npm install
 #
