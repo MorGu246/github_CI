@@ -5,7 +5,7 @@ WORKDIR /app
 #מעתיק את כלל מה שאיפה הדוקר פייל לתוך התיקייה שיצרנו
 COPY . /app
 
-EXPOSE 8080
+EXPOSE 3002
 #
 RUN npm install
 #

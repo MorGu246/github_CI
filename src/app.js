@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path'); ///////////////
 
-const port = 8080 ;//process.env.pory || 3671;
+const port = 3002 ;//process.env.pory || 3671;
 const app = express();
 
 /*app.get("/", (req,res) => {
