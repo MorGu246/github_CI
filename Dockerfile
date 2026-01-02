@@ -9,4 +9,4 @@ EXPOSE 3002
 #
 RUN npm install
 #
-CMD ["node","app.js"]
+CMD ["npm","start"]
