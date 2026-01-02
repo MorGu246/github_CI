@@ -20,5 +20,5 @@ app.listen(port, () => {            //server starts listening for any attempts f
     console.log(`The server is running on port ${port}....`);
 })*/
 
-// http://localhost:8080/ עובד
-// http://89.168.101.54:8080/ לא עובד
+// http://localhost:3002/ עובד //8080
+// http://89.168.101.54:3002/ לא עובד //8080
