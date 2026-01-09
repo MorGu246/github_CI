@@ -5,8 +5,8 @@ WORKDIR /app
 #מעתיק את כלל מה שאיפה הדוקר פייל לתוך התיקייה שיצרנו
 COPY . /app
 
-EXPOSE 3002
-#
+EXPOSE 80
+
 RUN npm install
 #
 CMD ["npm","start"]

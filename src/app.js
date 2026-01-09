@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path'); ///////////////
 
-const port = 3002 ;//process.env.pory || 3671;
+const port = 80 ;//process.env.pory || 3671; //3002
 const app = express();
 
 /*app.get("/", (req,res) => {
@@ -20,5 +20,6 @@ app.listen(port, () => {            //server starts listening for any attempts f
     console.log(`The server is running on port ${port}....`);
 })*/
 
-// http://localhost:3002/ עובד //8080
-// http://89.168.101.54:3002/ לא עובד //8080
+// http://localhost:3002/ עובד //8080 //3002
+// http://89.168.101.54:3002/ לא עובד //8080 //3002
+// http://89.168.101.54:80/
