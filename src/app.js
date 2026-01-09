@@ -1,12 +1,14 @@
 const express = require('express');
 const path = require('path'); ///////////////
 
-const port = 80 ;//process.env.pory || 3671; //3002
+const port = 3002 ;//process.env.pory || 3671; //3002
 const app = express();
 
 /*app.get("/", (req,res) => {
     res.send("welcome my site...")
 })*/
+
+app.use(express.static(__dirname));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '../my_page.html'));
