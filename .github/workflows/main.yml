@@ -61,7 +61,9 @@ jobs:
           #   docker compose pull
           #   docker compose up -d --force-recreate
           script: |
-            set -e
+            # פתיחת הפורטים בלינוקס
+            sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT || true
+            sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 443 -j ACCEPT || true
             cd /home/ubuntu/Devops_year_3/docker_compose_test
             
             # ניסיון לעצור שירותי מערכת שעלולים לתפוס את הפורט (בלי להיכשל אם אין הרשאה)

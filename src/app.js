@@ -27,3 +27,4 @@ app.listen(port, () => {            //server starts listening for any attempts f
 // http://89.168.101.54:80/ <----------------------------------------------- זה הנכון עכשיו
 
 // http://89.168.101.54:80
+//http://mor-devops.duckdns.org/
