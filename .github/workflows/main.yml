@@ -64,20 +64,19 @@ jobs:
             set -e
             cd /home/ubuntu/Devops_year_3/docker_compose_test
             
-            # התנתקות וניקוי קונטיינרים ישנים שתקועים
+            # ניסיון לעצור שירותי מערכת שעלולים לתפוס את הפורט (בלי להיכשל אם אין הרשאה)
+            sudo systemctl stop nginx || true
+            sudo systemctl stop apache2 || true
+            
+            # ניקוי דוקר
             docker compose down || true
             
-            # Login to DockerHub
+            # Login & Env update
             echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
-            
-            # עדכון קובץ ה-env
             echo "DOCKERHUB_USERNAME=$DOCKERHUB_USERNAME" > .env
             echo "IMAGE_TAG=${{ github.sha }}" >> .env
             
-            # משיכת אימג'ים חדשים
             docker compose pull
-            
-            # ניסיון הרצה
             docker compose up -d --force-recreate
         #
         #   docker pull ${{ secrets.DOCKERHUB_USERNAME }}/demo_repo_mor
