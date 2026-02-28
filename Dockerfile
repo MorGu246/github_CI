@@ -4,9 +4,9 @@ FROM node:18
 WORKDIR /app
 #מעתיק את כלל מה שאיפה הדוקר פייל לתוך התיקייה שיצרנו
 COPY . /app
-
+#
 EXPOSE 3002
-
+#
 RUN npm install
-
+#
 CMD ["npm","start"]
