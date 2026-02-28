@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,64 +18,207 @@
     <a href="">פרוייקט אזעקה / חנות</a>
     <a href="https://github.com/MorGu246/Blood_Pressure">פרוייקט בדיקות דם</a>
 </body>
-</html>
+</html> -->
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>קורות חיים - השם שלך</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* עיצוב כללי */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* מיכל מרכזי */
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        /* כותרת עליונה */
+        header {
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        /* כותרות סקשנים */
+        h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #ddd;
+            margin-right: 15px;
+        }
+
+        /* תוכן */
+        .section-content {
+            padding-right: 10px;
+        }
+
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .date {
+            color: #777;
+            font-weight: normal;
+            font-size: 0.9rem;
+        }
+
+        /* כישורים - בועיות */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-tag {
+            background: #e1f5fe;
+            color: #0277bd;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #b3e5fc;
+        }
+
+        /* הדפסה - מבטיח שהאתר ייראה טוב גם כשידפיסו אותו ל-PDF */
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; max-width: 100%; }
+            .skill-tag { border: 1px solid #ccc; }
+        }
+    </style>
 </head>
 <body>
 
+<div class="container">
     <header>
-        <h1>השם שלך</h1>
-        <p>תפקיד (למשל: מפתח Full Stack / מעצב גרפי)</p>
+        <h1>ישראל ישראלי</h1>
+        <p class="subtitle">מפתח תוכנה ומומחה טכנולוגי</p>
         <div class="contact-info">
-            <span>📧 email@example.com</span> | 
-            <span>📱 050-1234567</span> | 
-            <span>🔗 <a href="#">LinkedIn</a></span>
+            📧 <a href="mailto:israel@example.com">israel@example.com</a> | 
+            📱 050-0000000 | 
+            📍 תל אביב | 
+            🔗 <a href="#">LinkedIn</a>
         </div>
     </header>
 
-    <main>
-        <section>
-            <h2>תקציר מקצועי</h2>
-            <p>כאן כדאי לכתוב כמה משפטים על מי אתם, מה הניסיון העיקרי שלכם ומה אתם מחפשים.</p>
-        </section>
+    <section>
+        <h2>תקציר מקצועי</h2>
+        <div class="section-content">
+            <p>מפתח בעל תשוקה לפתרון בעיות מורכבות, עם ניסיון בבניית אפליקציות ווב מקצה לקצה. אוטודידקט, שחקן צוות וממוקד בתוצאות.</p>
+        </div>
+    </section>
 
-        <section>
-            <h2>ניסיון תעסוקתי</h2>
-            <div class="job">
-                <h3>שם החברה | תפקיד</h3>
-                <p class="date">2022 - היום</p>
+    <section>
+        <h2>ניסיון תעסוקתי</h2>
+        <div class="section-content">
+            <div class="item">
+                <div class="item-header">
+                    <span>חברת "הייטק-סטאק" | מפתח Full Stack</span>
+                    <span class="date">2021 - היום</span>
+                </div>
                 <ul>
-                    <li>תיאור אחריות או הישג משמעותי.</li>
-                    <li>שימוש בטכנולוגיות X ו-Y לשיפור ביצועים.</li>
+                    <li>הובלת פיתוח של ממשק משתמש ב-React ששיפר את חווית המשתמש ב-30%.</li>
+                    <li>עבודה מול בסיסי נתונים SQL ומיטוב שאילתות לשיפור מהירות המערכת.</li>
                 </ul>
             </div>
-        </section>
 
-        <section>
-            <h2>השכלה</h2>
-            <div class="education">
-                <h3>שם המוסד האקדמי</h3>
-                <p>תואר ראשון במדעי המחשב (2018-2021)</p>
+            <div class="item">
+                <div class="item-header">
+                    <span>צה"ל | תפקיד טכנולוגי</span>
+                    <span class="date">2018 - 2021</span>
+                </div>
+                <ul>
+                    <li>ניהול מערכות מידע קריטיות ותמיכה טכנית רחבה.</li>
+                    <li>עבודה תחת לחץ ועמידה בלוחות זמנים צפופים.</li>
+                </ul>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h2>כישורים (Skills)</h2>
-            <ul class="skills-list">
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Python</li>
+    <section>
+        <h2>השכלה</h2>
+        <div class="section-content">
+            <div class="item">
+                <div class="item-header">
+                    <span>אוניברסיטת בן גוריון | תואר ראשון במדעי המחשב</span>
+                    <span class="date">2015 - 2018</span>
+                </div>
+                <p>התמחות במערכות מבוזרות ובינה מלאכותית.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>כישורים טכניים</h2>
+        <div class="section-content">
+            <ul class="skills-container">
+                <li class="skill-tag">JavaScript (ES6+)</li>
+                <li class="skill-tag">HTML5 & CSS3</li>
+                <li class="skill-tag">React.js</li>
+                <li class="skill-tag">Node.js</li>
+                <li class="skill-tag">Python</li>
+                <li class="skill-tag">Git & GitHub</li>
+                <li class="skill-tag">SQL</li>
             </ul>
-        </section>
-    </main>
+        </div>
+    </section>
+</div>
 
 </body>
-</html> -->
+</html>
