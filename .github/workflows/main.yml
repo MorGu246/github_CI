@@ -61,23 +61,45 @@ jobs:
           #   docker compose pull
           #   docker compose up -d --force-recreate
           script: |
-            # פתיחת הפורטים בלינוקס
-            sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT || true
-            sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 443 -j ACCEPT || true
+            set -e
             cd /home/ubuntu/Devops_year_3/docker_compose_test
             
-            # ניסיון לעצור שירותי מערכת שעלולים לתפוס את הפורט (בלי להיכשל אם אין הרשאה)
-            sudo systemctl stop nginx || true
-            sudo systemctl stop apache2 || true
+            # 1. מחיקת התיקייה המקולקלת שנוצרה בטעות
+            sudo rm -rf nginx.conf
             
-            # ניקוי דוקר
+            # 2. יצירת קובץ nginx.conf תקין מאפס (בכל ריצה)
+            cat <<EOF > nginx.conf
+            server {
+                listen 80;
+                server_name mor-devops.duckdns.org;
+
+                location / {
+                    proxy_pass http://web:3002;
+                    proxy_http_version 1.1;
+                    proxy_set_header Upgrade \$http_upgrade;
+                    proxy_set_header Connection 'upgrade';
+                    proxy_set_header Host \$host;
+                    proxy_cache_bypass \$http_upgrade;
+                }
+            }
+            EOF
+
+            # 3. פתיחת פורטים בלינוקס
+            sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT || true
+            sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 443 -j ACCEPT || true
+            
+            # 4. עצירת שירותי מערכת
+            sudo systemctl stop nginx || true
+            
+            # 5. ריענון דוקר
             docker compose down || true
             
-            # Login & Env update
+            # 6. Login & Update Env
             echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
             echo "DOCKERHUB_USERNAME=$DOCKERHUB_USERNAME" > .env
             echo "IMAGE_TAG=${{ github.sha }}" >> .env
             
+            # 7. הרצה
             docker compose pull
             docker compose up -d --force-recreate
         #
