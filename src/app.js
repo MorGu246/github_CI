@@ -8,7 +8,8 @@ const app = express();
     res.send("welcome my site...")
 })*/
 
-app.use(express.static(__dirname));
+//app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, '../')));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
