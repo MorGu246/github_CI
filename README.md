@@ -2,7 +2,7 @@
 ## Description:
 This is the resume of Mor Guetta
 ## Technologies
-node.js, REACT
+node.js, REACT, sql
 ## Running mechanisms
 ## Missions
 ## Logs
@@ -19,7 +19,7 @@ node.js, REACT
 •	קישור ל־GitHub האישי
 
 
-## תוכן עניינים
+<!-- ## תוכן עניינים
 - [סקירה כללית](#סקירה-כללית)
 - [תכונות](#תכונות)
 - [התקנה](#התקנה)
@@ -27,20 +27,21 @@ node.js, REACT
 - [מבנה הפרויקט](#מבנה-הפרויקט)
 - [טכנולוגיות](#טכנולוגיות)
 - [תרומה לפרויקט](#תרומה-לפרויקט)
-- [רישיון](#רישיון)
+- [רישיון](#רישיון) -->
 
 ## סקירה כללית
 הפרויקט הזה נועד להציג את קורות החיים שלי עבור עבודות בתחום התוכנה.  
 הפרוייקט נועד בעיקר עבור מעסיקים שיוכלו לראות לנכון לקבל אותי לעבודה.
 
-## תכונות
+<!-- ## תכונות
 - ✨ תכונה ראשונה  
 - 🚀 תכונה שנייה  
-- 🔧 תכונה שלישית  
+- 🔧 תכונה שלישית   -->
 
 ## התקנה
 שלבים בסיסיים להתקנת הפרויקט:
+cd CI\ cd src\ node app.js
 
 ```bash
-git clone https://github.com/username/project-name.git
-cd project-name
+git clone https://github.com/MorGu246/github_CI
+#cd project-name
