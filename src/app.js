@@ -9,13 +9,30 @@ const app = express();
 })*/
 
 //app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, '../')));
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// app.use(express.static(path.join(__dirname, '../')));
 
+// app.get("/", (req, res) => {
+//     res.sendFile(path.join(__dirname, '../index.html'));
+// });
+
+// app.listen(port, () => {            //server starts listening for any attempts from a client to connect at port: {port}
+//     console.log(`The server is running on port ${port}....`);
+// });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// הגדרת נתיב אבסולוטי (מוחלט) לתיקיית האב (איפה שנמצאים index.html ו-me.jpg)
+// בתוך הקונטיינר, __dirname הוא /app/src, לכן '..' לוקח אותנו ל- /app
+const rootPath = path.join(__dirname, '..');
+
+// 1. הגדרת תיקיית הקבצים הסטטיים - זה מה שיאפשר גישה ל-me.jpg
+app.use(express.static(rootPath));
+
+// 2. ניתוב לדף הבית - שליחת ה-HTML
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, '../index.html'));
+    res.sendFile(path.join(rootPath, 'index.html'));
 });
 
-app.listen(port, () => {            //server starts listening for any attempts from a client to connect at port: {port}
+app.listen(port, () => {
     console.log(`The server is running on port ${port}....`);
 });
 
